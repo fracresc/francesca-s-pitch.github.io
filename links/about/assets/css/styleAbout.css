@@ -1,0 +1,428 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*BODY*/
+body {
+    position: relative;
+    z-index:1;
+    display:flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(140deg,blue,red);
+    background: -webkit-linear-gradient(140deg,blue,red);
+    background-size: 200% 400%;
+    animation: g-back 5s ease infinite;
+}
+
+@keyframes g-back{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+/*HEADER*/
+#myHeader{
+    width: 100%;
+    height:100px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position:fixed;
+    top:0;
+    opacity: 1;
+    z-index: 93;
+
+
+}
+
+#logo {
+    width:40px;
+    position:relative;
+    z-index:95;
+    margin:50%;
+}
+
+#insideHeader{
+    width: 80%;
+    margin:0 auto;
+    display:flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index:94;
+
+}
+/* classes javascrip*/
+.visible {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #adff2f;    
+}
+
+
+/**************CURTAIN MENU***************/
+#myMenu{
+    font-size:45px; 
+    cursor:pointer;
+    position: relative;
+    z-index:96;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    display:flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 97;
+    top: 0;
+    right: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+/*contenitore testo*/
+.overlay-content {
+    position: relative;
+    z-index:98;
+    width:50%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*testo menu*/
+.overlay-content a {
+    font-family: 'Tenor Sans', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 25px;
+    color: #b1029f;
+    display: block;
+    transition: 0.3s;
+    padding:10%;
+    position:relative;
+    z-index:99;
+}
+
+#close:hover, .overlay a:hover, .overlay a:focus {
+    /* color: greenyellow; */
+    color:#ff5085;
+
+}
+
+.overlay #close {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 30px;
+    color: #b1029f;
+}
+/* burger menu */
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 40px}
+    .overlay #close {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+/*freccia scroll down*/
+.scrollDown {
+    position:fixed;
+    z-index:14;
+    top:85%;
+    width:100%;
+    height:50px;
+    display:flex;
+    flex-flow: row;
+    justify-content:flex-end;
+    align-items: center;
+    padding-right: 20px;
+    color:greenyellow;
+}
+.fa-arrow-down{
+    animation: pulsazioni 2.5s ease infinite; 
+}
+/*freccia scroll up*/
+.fa-arrow-up {
+    animation: pulsazioni 2.5s ease infinite; 
+}
+
+@-webkit-keyframes pulsazioni {
+    from {
+        -webkit-transform:scale(1);
+        transform:scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.5);
+        transform:scale(1.5);
+    }
+
+    to {
+        -webkit-transform:scale(1);
+        transform:scale(1);
+    }
+}
+
+/*freccia verso il basso che appare quando user tocca lo schermo e quando si arriva alla fine della pagina con lo scroll la freccia verso il basso è sostituita dalla freccia versi l'alto*/
+.show {
+    visibility:visible;
+}
+
+.unShow {
+    visibility: hidden;
+}
+
+
+
+/*MAIN SX*/
+#mainSx{
+    width: 60%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    margin-top: 100px;
+    position:relative;
+    z-index:3;
+}
+
+h1 {
+    margin-top: 20px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 36px;
+}
+
+#mainSx p {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 20px;
+}
+
+#mainSx p:nth-of-type(1) span, #mainDx p:nth-of-type(1) span  {
+    font-weight:bolder;
+    text-transform: uppercase;
+    color:black;
+    /*    color:#adff2f;*/
+}
+#mainSx p:nth-of-type(2) span{
+    font-weight:bolder;
+    text-transform: uppercase;
+    color:black;
+}
+
+/*MAIN DIV DX*/
+#mainDx {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 25px;
+    margin:50px 0;
+}
+
+#mainDx .contentContainer p {
+    font-size: 20px;
+    text-align: justify;
+
+}
+
+.content {
+    width:200px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    /* color:#adff2f; */
+    color:#ff5085;
+    margin:15px;
+}
+
+
+.content a {
+    width:100%;
+    text-align: center;
+    padding:20px;
+    border:2px solid #ff5085;
+    border-radius: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color:inherit;
+    padding:20px;
+
+}
+
+footer {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 20px;
+    display:flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    z-index: 20;
+}
+
+footer > p:nth-of-type(1) {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color:rgba(0, 0, 0, 0.5);
+    position:relative;
+    z-index: 21;
+}
+
+footer > p:nth-of-type(2) {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 14px;
+    color:#d3d3d3;
+    margin:20px 0;
+    position:relative;
+    z-index: 22;
+}
+
+footer a {
+    text-decoration: none;
+    color:inherit;
+    position:relative;
+    z-index: 23;
+}
+
+/************ Desktop version *****************/
+@media (min-width: 801px){
+    /*grid*/
+    html, body, #background {
+        height:100%;
+    }
+
+    body{
+        position:relative;
+        display:grid;
+        grid-template-columns: 1fr 1fr 2fr 2fr 1fr 1fr;
+        grid-template-rows:1fr minmax(500px, auto) 1fr;
+    }
+
+
+    #myHeader {
+        /*    border:1px solid black;*/
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 1;
+        grid-row-start: 1;
+        display:flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0);
+        margin:2.0%;
+    }
+
+    #insideHeader{
+        width: 80%;
+        display:flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    #logo {
+        width: 50px; 
+
+    }
+
+    .overlay-content a {
+        font-size: 30px;
+        padding:7%;
+    }
+
+    #close {
+        font-size: 30px; 
+    }
+
+    #mainSx {
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-start: 2;
+        width:90%;
+        margin-top: 0;
+        margin-left: 30px;
+
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    #mainDx{
+        grid-column-start: 4;
+        grid-column-end: 6;
+        grid-row-start: 2;
+        grid-row-start: 2;
+        flex-flow: column;
+    }
+
+    .contentContainer{
+        display: flex;
+        align-items: center;
+        margin-left:3.5%;
+    }
+
+    .content{
+        margin:10.5%;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    
+    }
+
+    .content a:hover {
+        color:#d397ff;
+        border-color: #d397ff;
+    }
+
+    .scrollDown {
+        display:none;
+    }
+    /*FOOTER*/
+
+    footer {
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 3;
+        grid-row-start: 3;
+    }
+
+    footer > p:nth-of-type(1) {
+        font-size: 20px;
+    }
+
+    footer > p:nth-of-type(2) {
+        margin:0;
+    }
+
+    footer a:hover {
+        color:black;
+    }
+}
