@@ -1,0 +1,314 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html, body, #background {
+    height:100%;
+}
+
+/*BODY*/
+body {
+    position: relative;
+    z-index:1;
+    display:flex;
+    flex-flow: column;
+    justify-content:space-between;
+    align-items: center;
+    background: linear-gradient(140deg,blue,red);
+    background: -webkit-linear-gradient(140deg,blue,red);
+    background-size: 200% 400%;
+    animation: g-back 5s ease infinite;
+}
+
+@keyframes g-back{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+/*HEADER*/
+#myHeader{
+    width: 100%;
+    height:100px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 93;
+}
+
+#logo {
+    width:40px;
+    position:relative;
+    z-index:95;
+}
+
+#insideHeader{
+    width: 80%;
+    margin:0 auto;
+    display:flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index:94;
+}
+
+#clickHereContainer {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.pulse {
+    margin-right: 20px;
+    animation: pulse 1s infinite;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    vertical-align: center;
+    font-size: 14px;
+    color: whitesmoke;
+    font-family: 'Tenor Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+
+.pulse div {
+    align-self: center;
+    margin:auto;
+}
+
+.pulse i {
+    margin-top: 5px;
+}
+
+/* HTML: <div class="loader"></div> */
+/* .loader {
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #000;
+    box-shadow: 0 0 0 0 #0004;
+    animation: l2 1.5s infinite linear;
+    position: relative;
+  }
+  .loader:before,
+  .loader:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 0 0 #0004;
+    animation: inherit;
+    animation-delay: -0.5s;
+  }
+  .loader:after {
+    animation-delay: -1s;
+  }
+  @keyframes l2 {
+      100% {box-shadow: 0 0 0 40px #0000}
+  } */
+
+/*curtain menu*/
+#myMenu{
+    font-size:45px; 
+    cursor:pointer;
+    position: relative;
+    z-index:96;
+}
+
+.overlay {
+    height: 100%;
+    width:0;
+    display:flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    z-index:97;
+}
+/*contenitore testo*/
+.overlay-content {
+    width:50%;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    z-index:98;
+}
+
+/*testo menu*/
+.overlay-content a {
+    font-family: 'Tenor Sans', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 25px;
+    color: #b1029f;
+    display: block;
+    transition: 0.3s;
+    padding:10%;
+    position:relative;
+    z-index:99;
+}
+
+#close:hover, .overlay a:hover, .overlay a:focus {
+    color: #ff5085;
+}
+
+.overlay #close {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 30px;
+    color: #b1029f;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 40px}
+    .overlay #close {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+/********************/
+
+#mainSx{
+    display:flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    z-index:3;
+}
+
+#Layer_1{
+    display:block;
+    margin: 0 auto;
+    width:250px;
+}
+
+/*francesca_crescini #junior web developer*/
+#mainDx{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    position:relative;
+    z-index:4;
+}
+
+h1,h2, h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+h1{
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 23px;
+    color:white;
+
+}
+h2{
+    font-family: 'Tenor Sans', sans-serif;
+    color:#d750ff;
+    font-size: 21px;
+}
+h3{
+    font-family: 'Tenor Sans', sans-serif;
+    color:#ff5085;
+    font-size: 30px;
+}
+
+/*********** version desktop **************/
+@media (min-width: 801px){    
+    body {
+        position: relative;
+        display:grid;
+        grid-template-columns: 1fr 1fr 2fr 2fr 1fr 1fr;
+        grid-template-rows:1fr minmax(500px, auto) 1fr;
+    }
+
+    #myHeader {
+        /*    border:1px solid black;*/
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 1;
+        grid-row-start: 1;
+    }
+
+    #insideHeader{
+        padding:2.0%;
+    }
+
+    #logo {
+        width: 50px; 
+    }
+
+    .overlay-content a{
+        padding:7%;
+    }
+
+    .overlay-content a, #close{
+        font-size: 30px;
+    }
+
+    #mainSx{
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-start: 2;
+    }
+
+    #Layer_1{
+        width:300px;
+    }
+
+    #mainDx{
+        grid-column-start: 4;
+        grid-column-end: 6;
+        grid-row-start: 2;
+        grid-row-start: 2;
+        margin: 0;
+        padding:20px;
+        align-items: flex-start;
+    }
+
+    h1{font-size: 45px;
+        color:Black;}
+
+    h2{font-size: 30px; color:#d397ff; font-weight: bolder;}
+
+    footer {
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 3;
+        grid-row-start: 3;
+    }
+
+}
